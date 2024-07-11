@@ -1,0 +1,196 @@
+@import '../../../root';
+
+#navigation-bar
+{
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 3.125rem;
+    transition: all 0.2s ease-in-out 0s;
+    
+    ul,
+    li {
+        list-style-type: none;
+    }
+
+    .ic
+    {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 1.25em;
+        display: inline-block;
+    }
+
+    >.toggle
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 0;
+        cursor: pointer;
+
+        >.lines
+        {
+            padding: 1.25rem;
+            width: 1.375rem;
+            box-sizing: unset;
+
+            >.line
+            {
+                background: #fff;
+                display: inline-block;
+                height: .125rem;
+                position: relative;
+                border-radius: .0625rem;
+                transition: all .4s;
+                vertical-align: top;
+                width: 100%;
+                box-shadow: 0 0 .5rem rgba(0,0,0,.5);
+                margin-top:.1875rem;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            
+        }
+    }
+
+    >.menu 
+    {
+        display: flex;
+        padding: .625rem 0;
+        font-size: 1em;
+        line-height: 1.75;
+
+        >li
+        {
+            &:nth-child(1) a {
+                cursor: default;
+            }
+            
+            &:not(.title) >a::before
+            {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0.1875rem;
+                bottom: 0;
+                border-radius: 0.125rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: currentColor;
+                transition: all 0.4s ease-in-out 0s;
+            }
+
+            &:not(.dropdown) >a:hover::before {
+                width: 75%;
+            }
+        }
+
+        li
+        {
+            display: inline-block;
+            position: relative;
+            padding: 0 0.625rem;
+            letter-spacing: 0.0625rem;
+
+            .ic {
+                margin-right: 0.5rem;
+            }
+
+            &:hover
+            {
+                >.sub_menu {
+                    display: block;
+                }
+            }
+        }
+
+        
+        a
+        {
+            display: inline-block;
+            color: currentColor;
+            text-decoration: none;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            transition: all 0.2s ease-in-out 0s;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .list::after
+        {
+            content: "";
+            display: inline-block;
+            margin-left: .3rem;
+            vertical-align: middle;
+            border: .3rem solid transparent;
+            border-top-color: currentColor;
+            border-bottom: 0;
+        }
+        
+        .sub_menu
+        {
+            display: none;
+            position: absolute;
+            margin-top: 0.5rem;
+            width: -moz-max-content;
+            width: max-content;
+            background-color: var(--grey-9-a5);
+            box-shadow: 0 0.3125rem 1.25rem -0.25rem var(--grey-9-a1);
+            border-radius: 0.625rem 0;
+
+            &::hover {
+                animation: slideUpIn 0.3s;
+            }
+            
+            
+            &::before
+            {
+                position: absolute;
+                top: -1.25rem;
+                left: 0;
+                width: 100%;
+                height: 1.5rem;
+                content: '';
+            }
+
+            li 
+            {
+                display: block;
+
+                &:hover
+                {
+                    color: var(--grey-0);
+                    background-image: linear-gradient(to right, var(--color-pink) 0, var(--color-orange) 100%);
+                    box-shadow: 0 0 0.75rem var(--color-pink-a3);
+                }
+
+                a:hover
+                {
+                    transform: translateX(0.3rem);
+                    transition: all 0.2s ease-in-out 0s;
+                }
+            }
+        }
+    }
+
+    >.tool
+    {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: .5em;
+
+        li
+        {
+            padding: 0.625rem 0.5rem;
+            cursor: pointer;
+        }
+    }
+}

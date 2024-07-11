@@ -1,0 +1,20 @@
+web_title: React Blog
+logo_title: Logo Title
+logo_description: Logo Description
+
+# 菜单目录最多只支持二级目录
+menu:
+  home: / || home
+  posts:
+    default: / || pen
+    archives: /archives/ || list-alt
+    categories: /categories/ || th
+    tags: /tags/ || tags
+  about: /about/ || user
+  friend-links: /friend-links/ || heart
+  # books: /books/ || clipboard
+  # tools: /tools/ || paper-plane
+
+# 工具目录最多只支持一级目录
+tool:
+  searcher: search
