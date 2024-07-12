@@ -23,7 +23,7 @@ try
             const image_list = fs.readdirSync(local_image_dir);
 
             image_list.forEach(file_name => {
-                image_file_name.push('./imgs/' + file_name);
+                image_file_name.push('/imgs/' + file_name);
             });
         
             if (image_file_name.length > 0) 

@@ -4,7 +4,6 @@ import './index.scss'
 
 function Layout()
 {
-
     return (
         <>
             <Header />

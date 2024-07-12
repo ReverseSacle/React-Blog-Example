@@ -14,6 +14,7 @@ function Canvas()
         
         return canvas_image_list.map((url) => <li style={{ backgroundImage: `url(${url})` }} key={uuidv4()}></li>);
     };
+    
     return (
         <div id="canvas">
             <ul>{ canvasImageInsert() }</ul>

@@ -6,6 +6,8 @@ main
     >.inner
     {
         display: flex;
+        position: relative;
+        z-index: 1;
         margin: 0 auto;
         width: calc(100% - 0.625rem);
         align-items: flex-start;

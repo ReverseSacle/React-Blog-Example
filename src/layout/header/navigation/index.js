@@ -81,7 +81,6 @@ function NavigationBar()
                     </li>
                 ));
             }
-            // list_li.push(<Link to='/'>{key}</Link>);
         }
 
         return list_li.map((label) => label);

@@ -1,7 +1,7 @@
 import NavigationBar from "./navigation";
 import Brand from "./brand";
 import Canvas from "./canvas";
-import './index.scss'
+import './index.scss';
 
 
 function Header()
