@@ -44,15 +44,22 @@
     animation-duration: 20s;
     fill: var(--grey-1);
   }
-  
-  @keyframes wave 
-  {
-    0% {
-      transform: translate3d(-90px, 0, 0);
-    }
-  
-    100% {
-      transform: translate3d(85px, 0, 0);
-    }
+}
+
+@keyframes wave 
+{
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (max-width: 767px) 
+{
+  .waves {
+    height: 10vh;
   }
 }

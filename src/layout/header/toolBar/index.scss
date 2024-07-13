@@ -59,6 +59,15 @@
 
 @media (max-width: 991px) 
 {
+    #toolbar
+    {
+      right: 1rem;
+      left: auto;
+    }
+}
+
+@media (max-width: 991px) 
+{
     #toolbar.affix .contents {
       display: flex;
     }

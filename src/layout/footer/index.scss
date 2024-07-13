@@ -27,11 +27,29 @@
             }
         }
     }
+}
 
-    @media (min-width: 1200px) 
+
+@media (min-width: 1200px) 
+{
+    #footer .inner {
+        width: 72.5rem;
+    }
+}
+
+@media (min-width: 1600px) 
+{
+    #footer .inner {
+        width: 73%;
+    }
+}
+
+@media (max-width: 991px) 
+{
+    #footer .inner 
     {
-        #footer .inner {
-          width: 72.5rem;
-        }
+        padding-left: 0;
+        padding-right: 0;
+        width: auto;
     }
 }

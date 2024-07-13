@@ -1,5 +1,11 @@
 #navigation
 {
+    &.show .line
+    {
+        background: var(--text-color);
+        box-shadow: 0rem 0rem 0.0625rem var(--grey-9-a1);
+    }
+
     >.toggle
     {
         display: flex;
@@ -35,5 +41,16 @@
             }
             
         }
+    }
+}
+
+@media (max-width: 991px) 
+{
+    #nav .toggle 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

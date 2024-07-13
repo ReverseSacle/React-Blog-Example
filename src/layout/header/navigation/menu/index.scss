@@ -1,5 +1,9 @@
 #navigation
 {
+    &.show .menu .submenu {
+        background-color: var(--grey-1);
+    }
+
     >.menu 
     {
         display: flex;
@@ -140,5 +144,16 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 767px) 
+{
+    #nav .menu .item {
+      display: none;
+    }
+
+    #nav .menu .item.title {
+      display: block;
     }
 }

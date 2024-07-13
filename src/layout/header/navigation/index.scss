@@ -14,36 +14,9 @@
         box-shadow: 0.1rem 0.1rem 0.2rem var(--grey-9-a1);
         text-shadow: 0rem 0rem 0.0625rem var(--grey-9-a1);
         color: var(--text-color);
-
-        .line
-        {
-            background: var(--text-color);
-            box-shadow: 0rem 0rem 0.0625rem var(--grey-9-a1);
-        }
-        
-        .menu .submenu {
-            background-color: var(--grey-1);
-        }
     }
 
     &.down { transform: translateY(-100%); }
-
-
-   
-    >.tool
-    {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: .5em;
-
-        li
-        {
-            padding: 0.625rem 0.5rem;
-            cursor: pointer;
-        }
-    }
 }
 
 @media (min-width: 1200px) 
