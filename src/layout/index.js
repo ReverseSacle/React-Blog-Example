@@ -10,11 +10,14 @@ function Layout()
     const scroll_handle = () =>
     {
         const nav = document.getElementById('navigation-bar');
-        const current_y = window.scrollY;
+        const header = document.getElementById('header');
 
-        if(null != y)
+        console.log(y,' : ',window.scrollY,' : ',header.clientHeight);
+        console.log(window.scrollY > header.clientWidth);
+
+        if (window.scrollY >= header.clientHeight)
         {
-            const diff_y = y - current_y;
+            const diff_y = y - window.scrollY;
             nav.removeAttribute('class');
             if(diff_y < 0) {
                 nav.className = 'show down';
@@ -23,15 +26,34 @@ function Layout()
             } else {
                 
             }
-
             console.log(diff_y);
-        }
+        } else { nav.removeAttribute('class'); }
 
-        setY(current_y);
+        setY(window.scrollY);
     };
 
-    useEffect(() => {
-        window.addEventListener('scroll',() => { scroll_handle(null); });
+    useEffect(() => 
+    {
+        // 通过switcher避免
+        /**
+         * requestAnimationFrame，
+         * 可让浏览器能够优化动画的执行，减少不必要的计算和绘制，
+         * 以此避免频繁执行滚动事件处理。
+         * 再通过switcher限制了requestAnimationFrame的频繁创建。
+        **/
+        let switcher = true;
+        window.addEventListener('scroll',() => 
+        {
+            if(switcher) 
+            {
+                window.requestAnimationFrame(() => 
+                { 
+                    scroll_handle(null);
+                    switcher = false; 
+                });
+                switcher = true;
+            }
+        });
     },[y]);
 
     return (
