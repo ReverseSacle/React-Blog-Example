@@ -21,7 +21,7 @@
             box-shadow: 0rem 0rem 0.0625rem var(--grey-9-a1);
         }
         
-        .menu .sub_menu {
+        .menu .submenu {
             background-color: var(--grey-1);
         }
     }
@@ -31,14 +31,6 @@
     ul,
     li {
         list-style-type: none;
-    }
-
-    .ic
-    {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        width: 1.25em;
-        display: inline-block;
     }
 
     >.toggle
@@ -98,7 +90,7 @@
 
             &:hover
             {
-                >.sub_menu {
+                >.submenu {
                     display: block;
                 }
             }
@@ -156,8 +148,7 @@
             }
         }
 
-        
-        .sub_menu
+        .submenu
         {
             display: none;
             position: absolute;

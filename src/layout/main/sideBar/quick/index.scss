@@ -1,0 +1,37 @@
+#quick
+{
+    display: flex;
+    position: fixed;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 15rem;
+    margin: 0;
+    padding: 0;
+    bottom: 0.125rem;
+    
+    li
+    {
+        width: 25%;
+        min-height: 1.875rem;
+        transition: all 0.2s ease-in-out 0s;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        &.percent 
+        {
+            display: block;
+            background: var(--primary-color);
+            width: 0rem;
+            min-height: 0.125rem;
+        }
+
+        i { cursor: pointer; }
+        a
+        {
+            width: 100%;
+            display: block;
+        }
+    }
+}

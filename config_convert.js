@@ -4,32 +4,36 @@ const yaml = require('js-yaml');
 // choose use image from local, otherwise use web link in _images.yml 
 const config_dir = './_config.yml';
 
-const local_image = true;
-const local_image_dir = './imgs';
-const web_image_dir = './_images.yml'
+// cover for post and canvas
+const local_cover = true;
+const local_cover_dir = './cover';
+const web_cover_dir = './_covers.yml'
 const output_dir = './src/config.json';
+
+// local imgs
+const local_imgs_dir = './imgs';
 
 try
 {
     // import _config.yml
     const data = yaml.load(fs.readFileSync(config_dir,'utf-8'));
 
-    // import imgs
-    let image_file_name = []
-    if (local_image)
+    // import covers
+    let cover_file_name = [];
+    if (local_cover)
     {
         try
         {
-            const image_list = fs.readdirSync(local_image_dir);
+            const cover_list = fs.readdirSync(local_cover_dir);
 
-            image_list.forEach(file_name => {
-                image_file_name.push('/imgs/' + file_name);
+            cover_list.forEach(file_name => {
+                cover_file_name.push('/covers/' + file_name);
             });
         
-            if (image_file_name.length > 0) 
+            if (cover_file_name.length > 0) 
             { 
-                data.images = image_file_name;
-                fs.copySync(local_image_dir,'./public/imgs')
+                data.covers = cover_file_name;
+                fs.copySync(local_cover_dir,'./public/covers');
             }
         } catch (e) { console.log(e); }
     }
@@ -37,11 +41,28 @@ try
     {
         try
         {
-            const web_image_data = yaml.load(fs.readFileSync(web_image_dir,'utf-8'));
-            data.images = web_image_data
+            const web_cover_data = yaml.load(fs.readFileSync(web_cover_dir,'utf-8'));
+            data.covers = web_cover_data;
         } catch(e) { console.log(e); }
-
     }
+
+
+    // import imgs
+    try
+    {
+        let img_file_name = [];
+        const image_list = fs.readdirSync(local_imgs_dir);
+
+        image_list.forEach(file_name => {
+            img_file_name.push('/imgs/' + file_name);
+        });
+    
+        if (img_file_name.length > 0) 
+        { 
+            data.imgs = img_file_name;
+            fs.copySync(local_imgs_dir,'./public/imgs');
+        }
+    } catch (e) { console.log(e); }
 
     fs.writeFileSync(output_dir,JSON.stringify(data));
 } 

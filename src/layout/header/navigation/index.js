@@ -75,7 +75,7 @@ function NavigationBar()
                             <i className={ 'ic ' + 'i-' + sub_default_icon }></i>
                             {key}
                         </a>
-                        <ul className="sub_menu">
+                        <ul className="submenu">
                             {sub_list_li.map((label) => label)}
                         </ul>
                     </li>
@@ -115,7 +115,7 @@ function NavigationBar()
     };
 
     return (
-        <nav id='navigation-bar'>
+        <nav id='navigation-bar' className=''>
             <div className='toggle'>
                 <div className='lines' role='navigation'>
                     <span className='line'></span>

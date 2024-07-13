@@ -1,3 +1,5 @@
+import MainId from "./mainId";
+import SideBar from "./sideBar";
 import './index.scss';
 
 function Main()
@@ -5,12 +7,11 @@ function Main()
 
     return (
         <main>
-            <div className='inner'>
-                <div id='main'>
-                    <div className='index wrap'></div>
-                </div>
-            </div>
-        </main>
+        <div className='inner'>
+            <MainId />
+            <SideBar />
+        </div>
+    </main>
     );
 }
 

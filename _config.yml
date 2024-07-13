@@ -1,6 +1,15 @@
 web_title: React Blog
+
+# logo
 logo_title: Logo Title
 logo_description: Logo Description
+
+# sidebar
+author: ReverseSacle
+description: 知识书库 & 学习点滴
+
+sidebar:
+  avatar: avatar.jpg
 
 # 菜单目录最多只支持二级目录
 menu:
