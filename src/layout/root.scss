@@ -83,7 +83,7 @@
   --note-hover: #f14668;
 }
 
-[data-theme="dark"]
+[data-theme='dark']
 {
   &:root 
   {
@@ -215,33 +215,3 @@
   color: var(--color-grey);
 }
 /*********************************** color **************************************/
-
-*,
-*:before,
-*:after 
-{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body 
-{
-  background: linear-gradient(to top, var(--body-bg-shadow) 0, var(--grey-1) 20%) no-repeat bottom;
-  color: var(--text-color);
-  font-family: 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1em;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-  overflow: auto;
-}
-
-li
-{
-  list-style: none;
-}

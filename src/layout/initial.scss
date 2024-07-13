@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+}
+
+body 
+{
+  background: linear-gradient(to top, var(--body-bg-shadow) 0, var(--grey-1) 20%) no-repeat bottom;
+  color: var(--text-color);
+  font-family: 'Mulish', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 1em;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
+}
+
+@media (max-width: 991px) 
+{
+  body 
+  {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+*, 
+::before, 
+::after 
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Mulish', 'Noto Serif SC', 'Noto Serif JP', 'Mulish', -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 1.25rem 0 0.9375rem;
+}

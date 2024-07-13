@@ -1,7 +1,8 @@
-import NavigationBar from "./navigation";
-import Brand from "./brand";
-import Canvas from "./canvas";
+import NavigationBar from './navigation';
+import Brand from './brand';
+import Canvas from './canvas';
 import './index.scss';
+import ToolBar from './toolBar';
 
 
 function Header()
@@ -11,6 +12,7 @@ function Header()
             <NavigationBar />
             <Brand />
             <Canvas />
+            <ToolBar />
         </header>
     );
 };

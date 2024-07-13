@@ -1,7 +1,7 @@
-import Overview from "./overview";
-
+import Quick from './quick';
+import Overview from './overview';
 import './index.scss';
-import Quick from "./quick";
+
 
 function SideBar()
 {

@@ -3,6 +3,7 @@ import Waves from './waves';
 import Main from './main';
 import Footer from './footer';
 import './root.scss';
+import './initial.scss';
 
 import { useEffect, useRef } from 'react';
 
@@ -15,7 +16,10 @@ function Layout()
     const scroll_handle = () =>
     {
         const header = document.getElementById('header');
-        const nav = document.getElementById('navigation-bar');
+        if(undefined === header) { return; }
+
+        const nav = document.getElementById('navigation');
+        const toolbar = document.getElementById('toolbar');
         const sidebar = document.getElementById('sidebar');
         const y = y_ref.current;
 
@@ -48,6 +52,20 @@ function Layout()
             nav.classList.remove('show');
             sidebar.classList.remove('affix');
         }
+
+        if(window.scrollY > 0) 
+        { 
+            toolbar.classList.add('affix');
+
+            const h1 = document.querySelector('main >.inner').offsetHeight;
+            const h2 = window.innerHeight;
+            const contentVisibilityHeight = h1 > h2 ? h1 - h2 : document.body.scrollHeight - h2;
+            console.log(h1," ",h2," ",contentVisibilityHeight);
+            
+            const scroll_percent = Math.round(Math.min(100 * window.scrollY / contentVisibilityHeight, 100)) + '%';
+            toolbar.lastElementChild.getElementsByTagName('span')[0].innerText = scroll_percent;
+        }
+        else { toolbar.classList.remove('affix'); }
 
         y_ref.current = window.scrollY;
     };

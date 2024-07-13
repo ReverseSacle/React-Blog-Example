@@ -1,5 +1,5 @@
-import MainId from "./mainId";
-import SideBar from "./sideBar";
+import MainId from './mainId';
+import SideBar from './sideBar';
 import './index.scss';
 
 function Main()

@@ -9,10 +9,26 @@
     {
         position: relative;
         padding: 1.25rem;
-        animation: slideUpBigIn 0.5s;
 
         &:nth-child(1) {
             margin-bottom: 1.25rem;
         }
+    }
+}
+
+@media (max-width: 991px) 
+{
+    #main {
+        width: 100%;
+    }
+    #main .wrap {
+        padding: 0.625rem;
+    }
+}
+
+@media (max-width: 767px) 
+{
+    #main .wrap {
+        padding: 0.5rem;
     }
 }

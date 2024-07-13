@@ -16,7 +16,7 @@ function Canvas()
     };
     
     return (
-        <div id="canvas">
+        <div id='canvas'>
             <ul>{ canvasImageInsert() }</ul>
         </div>
     );

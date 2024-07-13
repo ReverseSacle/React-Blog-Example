@@ -1,4 +1,4 @@
-#navigation-bar
+#navigation
 {
     display: flex;
     position: fixed;
@@ -28,190 +28,8 @@
 
     &.down { transform: translateY(-100%); }
 
-    ul,
-    li {
-        list-style-type: none;
-    }
 
-    >.toggle
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        line-height: 0;
-        cursor: pointer;
-        visibility: hidden;
-
-        >.lines
-        {
-            padding: 1.25rem;
-            width: 1.375rem;
-            box-sizing: unset;
-
-            >.line
-            {
-                background: #fff;
-                display: inline-block;
-                height: .125rem;
-                position: relative;
-                border-radius: .0625rem;
-                transition: all .4s;
-                vertical-align: top;
-                width: 100%;
-                box-shadow: 0 0 .5rem rgba(0,0,0,.5);
-                margin-top:.1875rem;
-
-                &:first-child {
-                    margin-top: 0;
-                }
-            }
-            
-        }
-    }
-
-    >.menu 
-    {
-        display: flex;
-        padding: .625rem 0;
-        font-size: 1em;
-        line-height: 1.75;
-
-        li
-        {
-            display: inline-block;
-            position: relative;
-            padding: 0 0.625rem;
-            letter-spacing: 0.0625rem;
-
-            .ic {
-                margin-right: 0.5rem;
-            }
-
-            &:hover
-            {
-                >.submenu {
-                    display: block;
-                }
-            }
-        }
-
-        
-        a
-        {
-            display: inline-block;
-            color: currentColor;
-            text-decoration: none;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            transition: all 0.2s ease-in-out 0s;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        >li
-        {
-            &:nth-child(1) a {
-                cursor: default;
-            }
-            
-            &:not(.title) >a::before
-            {
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 0.1875rem;
-                bottom: 0;
-                border-radius: 0.125rem;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: currentColor;
-                transition: all 0.4s ease-in-out 0s;
-            }
-
-            &:not(.dropdown) >a:hover::before {
-                width: 72%;
-            }
-        }
-
-        .dropdown
-        {
-            >a::after
-            {
-                content: '';
-                display: inline-block;
-                margin-left: .3rem;
-                vertical-align: middle;
-                border: .3rem solid transparent;
-                border-top-color: currentColor;
-                border-bottom: 0;
-            }
-        }
-
-        .submenu
-        {
-            display: none;
-            position: absolute;
-            margin-top: 0.5rem;
-            width: -moz-max-content;
-            width: max-content;
-            background-color: var(--grey-9-a5);
-            box-shadow: 0 0.3125rem 1.25rem -0.25rem var(--grey-9-a1);
-            border-radius: 0.625rem 0;
-
-            &:hover {
-                animation: slideUpIn 0.3s;
-            }
-            
-            
-            &::before
-            {
-                content: '';
-                position: absolute;
-                top: -1.25rem;
-                left: 0;
-                width: 100%;
-                height: 1.5rem;
-            }
-
-            li 
-            {
-                display: block;
-
-                
-                &:hover
-                {
-                    color: var(--grey-0);
-                    background-image: linear-gradient(to right, var(--color-pink) 0, var(--color-orange) 100%);
-                    box-shadow: 0 0 0.75rem var(--color-pink-a3);
-                    opacity: 1;
-
-                    a {
-                        transform: translateX(0.3rem);
-                    }
-                }
-
-                a
-                {
-                    display: inline-block;
-                    padding: 0.3rem 0.7rem;
-                    width: 100%;
-                    text-shadow: none;
-
-                    &::before {
-                        content: none;
-                    }
-
-                    &:hover
-                    {
-                        transform: translateX(0.3rem);
-                        transition: all 0.2s ease-in-out 0s;
-                    }
-                }
-            }
-        }
-    }
-
+   
     >.tool
     {
         display: inline-flex;
@@ -225,5 +43,19 @@
             padding: 0.625rem 0.5rem;
             cursor: pointer;
         }
+    }
+}
+
+@media (min-width: 1200px) 
+{
+    #navigation .inner {
+      width: 72.5rem;
+    }
+}
+
+@media (min-width: 1600px) 
+{
+    #navigation .inner {
+      width: 73%;
     }
 }

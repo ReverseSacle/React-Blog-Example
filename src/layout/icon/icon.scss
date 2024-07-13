@@ -1,6 +1,6 @@
 .ic
 {
-    font-family: "ic" !important;
+    font-family: 'ic' !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -59,4 +59,12 @@
 
 .i-arrow-down {
     content: url(./i-arrow-down.svg)
+}
+
+.i-list-ol {
+    content: url(./i-list-ol.svg)
+}
+
+.i-comments {
+    content: url(./i-comments.svg)
 }
