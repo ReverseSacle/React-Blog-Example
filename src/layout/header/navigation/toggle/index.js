@@ -2,7 +2,6 @@ import './index.scss';
 
 function Toggle()
 {
-
     return (
         <div className='toggle'>
             <div className='lines' role='navigation'>

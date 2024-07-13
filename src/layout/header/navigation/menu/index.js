@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import data from '../../../../config.json';
+import { v4 as uuidv4 } from 'uuid';
 
-import '../../../icon/icon.scss';
+import data from '../../../../config.json';
 import './index.scss';
 
 function Menu()
@@ -12,7 +12,7 @@ function Menu()
         const menu_list = data.nav_menu;
 
         list_li.push(
-            <li className='title'>
+            <li className='title' key={uuidv4()}>
                 <a>{ data.web_title }</a>
             </li>
         );
@@ -26,7 +26,7 @@ function Menu()
                 const path = combine[0].trim();
                 const icon = combine[1].trim();
                 const content = (
-                    <li className={key}>
+                    <li className={key} key={uuidv4()}>
                         <Link to={ path }>
                             <i className={ 'ic ' + 'i-' + icon }></i>
                             { key }
@@ -58,7 +58,7 @@ function Menu()
                             continue;
                         }
                         const sub_content = (
-                            <li className={sub_key}>
+                            <li className={sub_key} key={uuidv4()}>
                                 <Link to={ sub_path }>
                                     <i className={ 'ic ' + 'i-' + sub_icon }></i>
                                     { sub_key }
@@ -69,7 +69,7 @@ function Menu()
                     }
                 }
                 list_li.push((
-                    <li className={key + ' dropdown'}>
+                    <li className={key + ' dropdown'} key={uuidv4()}>
                         <a className='list'>
                             <i className={ 'ic ' + 'i-' + sub_default_icon }></i>
                             {key}

@@ -1,8 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
 import data from '../../../../config.json';
-import '../../../icon/icon.scss';
 
 
-function Tool()
+function ToolBar()
 {
     const createNavigationTool = () =>
     {
@@ -10,7 +10,7 @@ function Tool()
         const tool_list = data.nav_tool;
 
         list_li.push(
-            <li className='theme'>
+            <li className='theme' key={uuidv4()}>
                 <i className='ic i-sun'></i>
             </li>
         );
@@ -20,7 +20,7 @@ function Tool()
             if ('string' == typeof value)
             {
                 const content = (
-                    <li className={key}>
+                    <li className={key} key={uuidv4()}>
                         <a>
                             <i className={ 'ic ' + 'i-' + value }></i>
                         </a>
@@ -36,4 +36,4 @@ function Tool()
     );
 }
 
-export default Tool;
+export default ToolBar;
