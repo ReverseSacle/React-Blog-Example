@@ -19,6 +19,7 @@
         flex-wrap: wrap;
         z-index: 1;
     }
+
     .panels 
     {
         height: 675px;
@@ -27,5 +28,24 @@
         padding-top: 4.6875rem;
         width: 100%;
         overflow: hidden;
+    }
+
+    &.affix
+    {
+        >.inner
+        {
+            position: fixed;
+            top: 0rem;
+        }
+
+        .panels
+        {
+            padding-top: 3.625rem;
+            height: 100vh;
+        }
+        
+        #quick {
+            display: flex;
+        }
     }
 }

@@ -13,6 +13,19 @@ const output_dir = './src/config.json';
 // local imgs
 const local_imgs_dir = './imgs';
 
+// output dir
+const local_cover_output_dir = './public/covers';
+const local_imgs_output_dir = './public/imgs';
+
+// delete old file
+try
+{
+    try { fs.removeSync(local_cover_output_dir); }
+    catch {}
+
+    fs.removeSync(local_imgs_output_dir);
+} catch {}
+
 try
 {
     // import _config.yml
@@ -33,7 +46,7 @@ try
             if (cover_file_name.length > 0) 
             { 
                 data.covers = cover_file_name;
-                fs.copySync(local_cover_dir,'./public/covers');
+                fs.copySync(local_cover_dir,local_cover_output_dir);
             }
         } catch (e) { console.log(e); }
     }
@@ -60,7 +73,7 @@ try
         if (img_file_name.length > 0) 
         { 
             data.imgs = img_file_name;
-            fs.copySync(local_imgs_dir,'./public/imgs');
+            fs.copySync(local_imgs_dir,local_imgs_output_dir);
         }
     } catch (e) { console.log(e); }
 
