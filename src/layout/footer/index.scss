@@ -1,0 +1,37 @@
+#footer
+{
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+    -webkit-overflow-scrolling: touch;
+    width: auto;
+    height: 100%;
+
+    .inner
+    {
+        margin: 0 auto;
+        width: calc(100% - 0.625rem);
+        position: relative;
+        padding-right: 16.25rem;
+
+        .status
+        {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+
+            .power-by
+            {
+                display: inline-block;
+                margin-bottom: 0.625rem;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) 
+    {
+        #footer .inner {
+          width: 72.5rem;
+        }
+    }
+}

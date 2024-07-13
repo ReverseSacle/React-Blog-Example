@@ -1,12 +1,16 @@
+import { useEffect, useState } from 'react';
+
 import Header from './header';
 import Waves from './waves';
-import './index.scss'
-import { useEffect, useState } from 'react';
+import Main from './main';
+import Footer from './footer';
+import './root.scss';
 
 function Layout()
 {
-    const [y,setY] = useState(null);
+    useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); },[]);
 
+    const [y,setY] = useState(null);
     const scroll_handle = () =>
     {
         const nav = document.getElementById('navigation-bar');
@@ -23,8 +27,6 @@ function Layout()
                 nav.className = 'show down';
             } else if(diff_y > 0) {
                 nav.className = 'show up';
-            } else {
-                
             }
             console.log(diff_y);
         } else { nav.removeAttribute('class'); }
@@ -34,7 +36,6 @@ function Layout()
 
     useEffect(() => 
     {
-        // 通过switcher避免
         /**
          * requestAnimationFrame，
          * 可让浏览器能够优化动画的执行，减少不必要的计算和绘制，
@@ -60,25 +61,8 @@ function Layout()
         <>
             <Header />
             <Waves />
-            <main>
-                <div className='inner'>
-                    <div id='main'>
-                        <div className='index wrap'></div>
-                    </div>
-                </div>
-            </main>
-            <footer id='footer'>
-                <div className='inner'>
-                    <div className='status'>
-                        <div className='copyright'>
-                            © 2024 – 2024 ReverseSacle @ React Shoka
-                        </div>
-                        <div className='powered-by'>          
-                            Powered by React & Theme.Shoka
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Main />
+            <Footer />
         </>
     );
 }

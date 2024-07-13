@@ -2,16 +2,14 @@
 {
   .waves 
   {
+      position:relative;
       width: 100%;
       height: 15vh;
       margin-bottom: -.6875rem;
       min-height: 3.125rem;
       max-height: 9.375rem;
-      position:relative;
     
-      @mixin mobile() {
-        height: 10vh;
-      }
+      @mixin mobile() { height: 10vh; }
   }
   
   /* Animation */

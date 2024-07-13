@@ -12,7 +12,7 @@ function Canvas()
 
         for(let i = 0;i < 6 && i < list_length;++i) { canvas_image_list.push(image_list[i]); }
         
-        return canvas_image_list.map((url) => <li style={{ backgroundImage: `url(${url})` }} key={uuidv4()}></li>);
+        return canvas_image_list.map((url) => <li data-background-image='' style={{ backgroundImage: `url(${url})` }} key={uuidv4()}></li>);
     };
     
     return (

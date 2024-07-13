@@ -1,5 +1,3 @@
-@import '../../../root';
-
 #navigation-bar
 {
     display: flex;
@@ -21,6 +19,10 @@
         {
             background: var(--text-color);
             box-shadow: 0rem 0rem 0.0625rem var(--grey-9-a1);
+        }
+        
+        .menu .sub_menu {
+            background-color: var(--grey-1);
         }
     }
 
@@ -47,6 +49,7 @@
         align-items: center;
         line-height: 0;
         cursor: pointer;
+        visibility: hidden;
 
         >.lines
         {
@@ -82,31 +85,6 @@
         font-size: 1em;
         line-height: 1.75;
 
-        >li
-        {
-            &:nth-child(1) a {
-                cursor: default;
-            }
-            
-            &:not(.title) >a::before
-            {
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 0.1875rem;
-                bottom: 0;
-                border-radius: 0.125rem;
-                left: 50%;
-                transform: translateX(-50%);
-                background-color: currentColor;
-                transition: all 0.4s ease-in-out 0s;
-            }
-
-            &:not(.dropdown) >a:hover::before {
-                width: 72%;
-            }
-        }
-
         li
         {
             display: inline-block;
@@ -139,16 +117,45 @@
             cursor: pointer;
         }
 
-        .list::after
+        >li
         {
-            content: "";
-            display: inline-block;
-            margin-left: .3rem;
-            vertical-align: middle;
-            border: .3rem solid transparent;
-            border-top-color: currentColor;
-            border-bottom: 0;
+            &:nth-child(1) a {
+                cursor: default;
+            }
+            
+            &:not(.title) >a::before
+            {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0.1875rem;
+                bottom: 0;
+                border-radius: 0.125rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: currentColor;
+                transition: all 0.4s ease-in-out 0s;
+            }
+
+            &:not(.dropdown) >a:hover::before {
+                width: 72%;
+            }
         }
+
+        .dropdown
+        {
+            >a::after
+            {
+                content: '';
+                display: inline-block;
+                margin-left: .3rem;
+                vertical-align: middle;
+                border: .3rem solid transparent;
+                border-top-color: currentColor;
+                border-bottom: 0;
+            }
+        }
+
         
         .sub_menu
         {
@@ -161,36 +168,54 @@
             box-shadow: 0 0.3125rem 1.25rem -0.25rem var(--grey-9-a1);
             border-radius: 0.625rem 0;
 
-            &::hover {
+            &:hover {
                 animation: slideUpIn 0.3s;
             }
             
             
             &::before
             {
+                content: '';
                 position: absolute;
                 top: -1.25rem;
                 left: 0;
                 width: 100%;
                 height: 1.5rem;
-                content: '';
             }
 
             li 
             {
                 display: block;
 
+                
                 &:hover
                 {
                     color: var(--grey-0);
                     background-image: linear-gradient(to right, var(--color-pink) 0, var(--color-orange) 100%);
                     box-shadow: 0 0 0.75rem var(--color-pink-a3);
+                    opacity: 1;
+
+                    a {
+                        transform: translateX(0.3rem);
+                    }
                 }
 
-                a:hover
+                a
                 {
-                    transform: translateX(0.3rem);
-                    transition: all 0.2s ease-in-out 0s;
+                    display: inline-block;
+                    padding: 0.3rem 0.7rem;
+                    width: 100%;
+                    text-shadow: none;
+
+                    &::before {
+                        content: none;
+                    }
+
+                    &:hover
+                    {
+                        transform: translateX(0.3rem);
+                        transition: all 0.2s ease-in-out 0s;
+                    }
                 }
             }
         }
